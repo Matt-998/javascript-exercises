@@ -1,9 +1,12 @@
-const removeFromArray = function (array, x) {
+const removeFromArray = function (array, ...theArgs) {
+  const args = theArgs;
+  let iterator = args.values();
+  for (let remove of iterator) {
+    let index = array.indexOf(remove);
+    array.splice(index, 1);
+  }
   console.log(array);
-  let index = array.indexOf(x);
-  console.log(index);
-  let f = array.splice(index, 1);
-  console.log(array);
+
   return array;
 };
 
